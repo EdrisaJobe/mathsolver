@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import "./solver.css";
 
 export default function Solver() {
+
   /* QUADRATIC FORMULA EQUATION */
   let { aTerm, bTerm, cTerm, outputText, outputTextEq, handleSubmit,
-        axTerm, ayTerm, bxTerm, byTerm, eq1, eq2, eqOutputText, eqOutput } =
+        axTerm, ayTerm, bxTerm, byTerm, eq1, eq2, eqOutputText, eqOutput,
+        xdev, x, y, ax3Term, bx2Term, cxTerm, dTerm, cubicEq, cubicOutput } =
     useForm();
 
   // submit function once 'Calculate' button has been pressed
@@ -49,8 +51,11 @@ export default function Solver() {
     eq1 = document.forms["input_form2"]["eq1"].value;
     eq2 = document.forms["input_form2"]["eq2"].value;
 
+    // calculating for both x and y terms separately
     let x = (eq2 * ayTerm - eq1 * byTerm)/(ayTerm * bxTerm - axTerm * byTerm);
     let y = (eq1 * bxTerm - eq2 * axTerm)/(ayTerm * bxTerm - axTerm * byTerm);
+
+    // converts num -> str, then rounds to a specified decimal (3)
     x = x.toFixed(3);
     y = y.toFixed(3);
 
@@ -63,6 +68,35 @@ export default function Solver() {
   };
   /* END OF TWO LINEAR EQUATIONS */
 
+  /* CUBIC EQUATION */
+  let onCubicCalc = () => {
+
+    ax3Term = document.forms["input_form3"]["ax3"].value;
+    bx2Term = document.forms["input_form3"]["bx2"].value;
+    cxTerm = document.forms["input_form3"]["cx"].value;
+    dTerm = document.forms["input_form3"]["d"].value;
+
+    let err=0.0001, iter=0.00001, xlast=-100;
+
+    // looping through the statements, we then move to an if statement once calculation has completed
+    for (x = -100; x <= 100; x += iter){
+      y = (ax3Term * x * x * x) + (bx2Term * x * x) + (cxTerm * x) + dTerm;
+      xdev = x - xlast;
+      
+      cubicEq = "Equation: " + ax3Term + "x\u00B3 + " + bx2Term + "x\u00B2 + " + cxTerm + "x + " + dTerm + " = 0";
+
+      // output the answer
+      if (Math.abs(y) < err && xdev > 0.1){
+        cubicOutput = "Output: x<sub>1</sub> = " + x.toFixed(3);
+        xlast = x;
+      }
+      
+    }
+    document.getElementById("cubicEq").innerHTML = cubicEq;
+    document.getElementById("cubicOutput").innerHTML = cubicOutput;
+  };
+  /* END OF CUBIC EQUATION */
+  
   return (
     <>
       <Helmet>
@@ -131,9 +165,34 @@ export default function Solver() {
             <p id="eqOutput">Output: X , Y</p> 
             <input type="submit" value="Calculate" className="btn btn-primary" />
           </div>
-          <br />
-          <hr />
         </form>
+
+        <br />
+        <hr />
+
+        {/* CUBIC EQUATION */}
+        <form 
+          name="input_form3" 
+          onSubmit={handleSubmit(onCubicCalc)}>
+          <div claaName="cubic">
+            <h5>Cubic Equation (In Progress)</h5>
+            <input type="text" name="ax3" ref={ax3Term} required />x<sup>3</sup> +
+            <input type="text" name="bx2" ref={bx2Term} required />x<sup>2</sup> +
+            <input type="text" name="cx" ref={cxTerm}  required />x +
+            <input type="text" name="d" ref={dTerm}  required /> = 0
+          </div>
+          <br />
+          <p id="cubicEq">Equation: ax<sup>3</sup> + bx<sup>2</sup> + cx + d = 0</p>
+          <p id="cubicOutput">Output: x<sub>1</sub> = ...</p>
+          <input type="submit" value="Calculate" className="btn btn-primary" />
+          <br/><strong><em>NOTE: Allow a few seconds to run calculation.</em></strong>
+        </form>
+        {/* END OF CUBIC EQUATION */}
+        
+        <br />
+        <hr />
+
+        <h3>More equations to come!</h3>
       </div>
     </>
   );
