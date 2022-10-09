@@ -1,0 +1,140 @@
+import { React } from "react";
+import { Helmet } from "react-helmet";
+import { useForm } from "react-hook-form";
+import "./solver.css";
+
+export default function Solver() {
+  /* QUADRATIC FORMULA EQUATION */
+  let { aTerm, bTerm, cTerm, outputText, outputTextEq, handleSubmit,
+        axTerm, ayTerm, bxTerm, byTerm, eq1, eq2, eqOutputText, eqOutput } =
+    useForm();
+
+  // submit function once 'Calculate' button has been pressed
+  let onSubmit = () => {
+    aTerm = document.forms["input_form"]["a"].value;
+    bTerm = document.forms["input_form"]["b"].value;
+    cTerm = document.forms["input_form"]["c"].value;
+
+    // if a = 0, print error message, else calculate the equation
+    if (aTerm === 0) {
+      outputText = "<p>Error, cannot equal 0!</p>";
+    } else {
+      // root 1 equation
+      let x1 =
+        (-bTerm - Math.sqrt(Math.pow(bTerm, 2) - 4 * aTerm * cTerm)) /
+        (2 * aTerm);
+      // root 2 equation
+      let x2 =
+        (-bTerm + Math.sqrt(Math.pow(bTerm, 2) - 4 * aTerm * cTerm)) /
+        (2 * aTerm);
+
+      // Display the user equation in qudratic form
+      outputTextEq =
+        "Equation: " + (aTerm == 1 ? "" : aTerm) + "x\u00B2 + " + (bTerm == 1 ? "": bTerm) + "x + " + cTerm + " = 0";
+      // Display the roots calculated
+      outputText = "Roots: " + x1 + " , " + x2;
+    }
+    // get the following IDs and print out the output from the calculation/text input
+    document.getElementById("equation").innerHTML = outputTextEq;
+    document.getElementById("roots").innerHTML = outputText;
+  };
+  /* END OF QUADRATIC FORMULA EQUATION */
+
+  /* TWO LINEAR EQUATIONS */
+  const onCalculate = () => {
+    axTerm = document.forms["input_form2"]["ax"].value;
+    ayTerm = document.forms["input_form2"]["ay"].value;
+    bxTerm = document.forms["input_form2"]["bx"].value;
+    byTerm = document.forms["input_form2"]["by"].value;
+    eq1 = document.forms["input_form2"]["eq1"].value;
+    eq2 = document.forms["input_form2"]["eq2"].value;
+
+    let x = (eq2 * ayTerm - eq1 * byTerm)/(ayTerm * bxTerm - axTerm * byTerm);
+    let y = (eq1 * bxTerm - eq2 * axTerm)/(ayTerm * bxTerm - axTerm * byTerm);
+    x = x.toFixed(3);
+    y = y.toFixed(3);
+
+    eqOutputText = "Equation1: " + axTerm + "x + " + ayTerm + "y" + " = " + eq1 + 
+                   " Equation2: " + bxTerm + "x + " + byTerm + "y" + " = " + eq2;
+    eqOutput = "Output: " + x + " , " + y;
+    
+    document.getElementById("eqOutputText").innerHTML = eqOutputText;
+    document.getElementById("eqOutput").innerHTML = eqOutput;
+  };
+  /* END OF TWO LINEAR EQUATIONS */
+
+  return (
+    <>
+      <Helmet>
+        <title>Solver</title>
+      </Helmet>
+
+      {/* QUADRATIC FORM */}
+      <div className="solver">
+        <form
+          name="input_form"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <h5>Quadratic Equation</h5>
+          <div className="quadratic">
+            <div className="inputDiv">
+              a:
+              <input type="number" name="a" ref={aTerm} required />
+              <br />
+            </div>
+            <div className="inputDiv">
+              b:
+              <input type="number" name="b" ref={bTerm} required />
+              <br />
+            </div>
+            <div className="inputDiv">
+              c:
+              <input type="number" name="c" ref={cTerm} required />
+              <br />
+            </div>
+            <p id="equation">Equation: x<sup>2</sup> + x + c = 0</p>
+            <p id="roots">Roots: x1 , x2</p>
+            <input
+              type="submit"
+              value="Calculate"
+              className="btn btn-primary"
+            />
+          </div>
+        </form>
+        {/* END OF QUADRATIC FORM */}
+
+        <hr />
+        <br />
+
+        {/* TWO LINEAR EQUATIONS */}
+        <form
+          name="input_form2"
+          onSubmit={handleSubmit(onCalculate)}
+          >
+          <div>
+            <h5>Two Linear Equations</h5>
+            <div className="linear">
+              <div className="inputDivLinear">
+                <input type="text" name="ax" ref={axTerm} required/>x +
+                <input type="text" name="ay" ref={ayTerm} required/>y
+                = <input type="text" name="eq1" ref={eq1} required/>
+              </div>
+              <br />
+              <div className="inputDivLinear">
+                <input type="text" name="bx" ref={bxTerm} required/>x +
+                <input type="text" name="by" ref={byTerm} required/>y
+                = <input type="text" name="eq2" ref={eq2} required/>
+              </div>
+            </div>
+            <br />
+            <p id="eqOutputText">Equation1: x + y = 0 Equation2: x + y = 0</p>
+            <p id="eqOutput">Output: X , Y</p> 
+            <input type="submit" value="Calculate" className="btn btn-primary" />
+          </div>
+          <br />
+          <hr />
+        </form>
+      </div>
+    </>
+  );
+}
