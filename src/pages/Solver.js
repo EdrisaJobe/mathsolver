@@ -224,7 +224,8 @@ export default function Solver() {
             />
           </div>
         </form>
-
+        {/* END OF PYTHAGOREAN THEOREM */}
+        
         <hr />
         <br />
 
