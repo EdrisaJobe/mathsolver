@@ -1,7 +1,7 @@
 # About Math Solver
 This web application was intended for students when solving particular math problems, as a student I had a hard time memorizing some concepts from classes especially math related ones so I decided to make an app that allows me to calculate with ease. After working on the app I got a better understanding as to how to display content dynamically onto a page and displaying constant updates after each input submission. Using this app really helped me understand the concepts thought in class as I had to dully understand each equation in order to implement them.
 
-<a href="https://mathsolver-app.herokuapp.com/"><img src="https://img.shields.io/badge/Link-Easy_Charts-2ea44f?style=for-the-badge" alt="Link - Math Solver"></a>
+<a href="https://mathsolver-app.herokuapp.com/"><img src="https://img.shields.io/badge/Link-Math_Solver-2ea44f?style=for-the-badge" alt="Link - Math Solver"></a>
 ## Technology Used :hammer_and_wrench:
 
 Frontend :gear:| Description|
