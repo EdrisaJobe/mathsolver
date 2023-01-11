@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# About Math Solver
+This web application was intended for students when solving particular math problems, as a student I had a hard time memorizing some concepts from classes especially math related ones so I decided to make an app that allows me to calculate with ease. After working on the app I got a better understanding as to how to display content dynamically onto a page and displaying constant updates after each input submission. Using this app really helped me understand the concepts thought in class as I had to dully understand each equation in order to implement them.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://mathsolver-app.herokuapp.com/"><img src="https://img.shields.io/badge/Link-Easy_Charts-2ea44f?style=for-the-badge" alt="Link - Math Solver"></a>
+## Technology Used :hammer_and_wrench:
 
-## Available Scripts
+Frontend :gear:| Description|
+-------|------------|
+ReactJS | Used to display components from within the HTML page, handled both frontend and backend design when implementing the proper logic as to how to display the content.
+CSS    | Everything within the pages were styled using CSS, the design again is very minimilistic but clean and easy to use. Also, used it as a way to make it responsive to phones and other devices.
+Bootstrap| Visual aspects such as the textfield and button elements, component designs.
+HTML   | Stores all the pages, used alongside React to make the dynamic components needed in order for the user to input data.
 
-In the project directory, you can run:
+Backend :toolbox:| Description|
+-------|------------|
+JavaScript | All the script was written in JavaScript alongside React for backend implementation primarily functions regarding the logic for each equation how it is displayed on the HTML.
+Firebase | Used Firebase to save save user input within the database which can then be retrieved thus being able to see the dynamic changes in real time. The database can also be resetted upon a refresh from the page therefore no information is being saved.
 
-### `npm start`
+Libraries :books:| Description|
+-------|------------|
+React Helmet| This reusable React component will manage all of your changes to the document head. Helmet takes plain HTML tags and outputs plain HTML tags.
+React Hook Form | Helped to validate all the forms in the React app acting as CSRF token to prevent malicious input injections. It is a minimal library without any other dependencies, while being performant and straightforward to use.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Web-services :spider_web:| Description|
+-------|------------|
+Heroku | Heroku is a cloud platform for hosting and maintaining website information which I used to later connect the platform with GoDaddy. 
+GoDaddy| Domain was registered from GoDaddy alongside all DNS setup.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Visual Example
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 33 49 PM" src="https://user-images.githubusercontent.com/48189579/211901009-a43736dc-0164-4f25-9137-77cdd821dd94.png">
 
-### `npm test`
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 34 12 PM" src="https://user-images.githubusercontent.com/48189579/211901039-1e141d0c-414b-4d22-861c-3ccdaad49dc1.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 34 21 PM" src="https://user-images.githubusercontent.com/48189579/211901120-5fbaf7d1-7432-4bcc-bbc5-a9d2d9226f3d.png">
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
