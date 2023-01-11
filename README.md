@@ -1,7 +1,7 @@
 # About Math Solver
 This web application was intended for students when solving particular math problems, as a student I had a hard time memorizing some concepts from classes especially math related ones so I decided to make an app that allows me to calculate with ease. After working on the app I got a better understanding as to how to display content dynamically onto a page and displaying constant updates after each input submission. Using this app really helped me understand the concepts thought in class as I had to dully understand each equation in order to implement them.
 
-[![Link - Math Solver](https://img.shields.io/badge/Link-The_Forecast_App-3693F3?style=for-the-badge&logo=<svg+role%3D"img"+viewBox%3D"0+0+24+24"+xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"><title>iCloud<%2Ftitle><path+d%3D"M13.762+4.29a6.51+6.51+0+0+0-5.669+3.332+3.571+3.571+0+0+0-1.558-.36+3.571+3.571+0+0+0-3.516+3A4.918+4.918+0+0+0+0+14.796a4.918+4.918+0+0+0+4.92+4.914+4.93+4.93+0+0+0+.617-.045h14.42c2.305-.272+4.041-2.258+4.043-4.589v-.009a4.594+4.594+0+0+0-3.727-4.508+6.51+6.51+0+0+0-6.511-6.27z"%2F><%2Fsvg>)](https://mathsolver-app.herokuapp.com/)
+[![Link - Math Solver](https://img.shields.io/badge/Link-Math_Solver-3693F3?style=for-the-badge&logo=<svg+role%3D"img"+viewBox%3D"0+0+24+24"+xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"><title>iCloud<%2Ftitle><path+d%3D"M13.762+4.29a6.51+6.51+0+0+0-5.669+3.332+3.571+3.571+0+0+0-1.558-.36+3.571+3.571+0+0+0-3.516+3A4.918+4.918+0+0+0+0+14.796a4.918+4.918+0+0+0+4.92+4.914+4.93+4.93+0+0+0+.617-.045h14.42c2.305-.272+4.041-2.258+4.043-4.589v-.009a4.594+4.594+0+0+0-3.727-4.508+6.51+6.51+0+0+0-6.511-6.27z"%2F><%2Fsvg>)](https://mathsolver-app.herokuapp.com/)
 ## Technology Used :hammer_and_wrench:
 
 Frontend :gear:| Description|
